@@ -28,3 +28,26 @@ if (f && msg) {
     f.reset();
   });
 }
+const coverageMap = document.getElementById("coverageMap");
+const zoomIn = document.getElementById("zoomIn");
+const zoomOut = document.getElementById("zoomOut");
+
+let mapScale = 1;
+
+function updateMapZoom() {
+  if (coverageMap) {
+    coverageMap.style.transform = `scale(${mapScale})`;
+  }
+}
+
+if (coverageMap && zoomIn && zoomOut) {
+  zoomIn.addEventListener("click", () => {
+    mapScale = Math.min(mapScale + 0.2, 3);
+    updateMapZoom();
+  });
+
+  zoomOut.addEventListener("click", () => {
+    mapScale = Math.max(mapScale - 0.2, 1);
+    updateMapZoom();
+  });
+}

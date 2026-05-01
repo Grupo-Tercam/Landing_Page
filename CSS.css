@@ -53,7 +53,48 @@ body { margin: 0; font-family: "Inter", sans-serif; line-height: 1.5; background
 #nosotros p, #nosotros li { color: var(--color5); }
 .coverage { background: linear-gradient(180deg, #ff6d00 0%, #eb5f00 100%); }
 .coverage-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
-.coverage-map iframe { width: 100%; min-height: 340px; border: 4px solid rgba(255, 253, 208, 0.28); border-radius: 20px; box-shadow: 0 18px 36px rgba(43, 43, 43, 0.16); }
+.map-zoom {
+  position: relative;
+  width: 100%;
+  min-height: 340px;
+  border: 4px solid rgba(255, 253, 208, 0.28);
+  border-radius: 20px;
+  box-shadow: 0 18px 36px rgba(43, 43, 43, 0.16);
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+.map-zoom img {
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+  cursor: zoom-in;
+}
+
+.map-controls {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.map-controls button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color2), var(--color3));
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(43, 43, 43, 0.18);
+}
+
 .coverage-copy h2 { margin-top: 0; color: var(--white); font-size: 2.2rem; }
 .coverage-copy p { color: #fff3de; }
 
