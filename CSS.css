@@ -9,14 +9,15 @@ body { margin: 0; font-family: "Inter", sans-serif; line-height: 1.5; background
 
 /* Header */
 .site-header { background: linear-gradient(180deg, #ffb300 0%, #ffae00 100%); padding: 1rem 0; position: sticky; top: 0; z-index: 20; box-shadow: 0 10px 24px rgba(43, 43, 43, 0.08); }
-.site-header .container { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.site-header .container { width: min(96%, 1500px); display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+
 .brand { display: flex; align-items: center; gap: 1rem; }
 .brand-logo { width: 200px; display: block; }
 .brand-copy h1, .brand-copy p { margin: 0; }
 .brand-copy h1 { color: var(--color5); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; }
 .brand-copy p { color: var(--color4); font-weight: 600; }
 
-.site-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+.site-nav { display: flex; gap: 1rem; flex-wrap: wrap; margin-left: auto; justify-content: flex-end; }
 .site-nav a { display: inline-block; padding: 0.85rem 1.7rem; color: var(--white); text-decoration: none; font-weight: 700; border-radius: 14px; background: linear-gradient(135deg, var(--color2), var(--color3)); box-shadow: 0 12px 24px rgba(163, 18, 23, 0.18); transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease; }
 .site-nav a:hover { transform: translateY(-2px); box-shadow: 0 16px 28px rgba(163, 18, 23, 0.24); filter: brightness(1.05); }
 
