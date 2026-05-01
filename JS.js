@@ -37,6 +37,7 @@ let mapScale = 1;
 let mapX = 0;
 let mapY = 0;
 let isDragging = false;
+
 let startX = 0;
 let startY = 0;
 
