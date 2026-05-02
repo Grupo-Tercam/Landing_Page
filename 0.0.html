@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Landing Page | TERCAM</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="CSS.css">
 </head>
@@ -26,7 +27,7 @@
   <div class="hero-layout">
     <div class="hero-content">
       <p class="hero-tag">ESPECIALISTAS EN REPARTO</p>
-      <h2>Envios rapidos, seguros y confiables para cada entrega</h2>
+      <h2>Envíos rápidos, seguros y confiables para cada entrega</h2>
     </div>
     <div class="hero-visual">
       <div class="contact-video">
@@ -43,15 +44,15 @@
   <div class="grid">
     <article class="card">
       <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 7h11v8H3V7zm11 2h3l3 3v3h-6V9zm-9 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm11 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 19h7m2 0h1m-3-9V7h2l3 3"/></svg></div>
-      <h3>PRIMER MILLA</h3><p>Este servicio se encarga del transporte de paquetes desde el punto de origen hasta el centro de distribución o almacén inicial.</p>
+      <h3>PRIMER MILLA</h3><p>Transporte de paquetes desde el punto de origen hasta el centro de distribución inicial.</p>
     </article>
     <article class="card">
       <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
-      <h3>MEDIA MILLA</h3><p>Este servicio se enfoca en la transferencia de paquetes entre diferentes centros de distribución o almacenes.</p>
+      <h3>MEDIA MILLA</h3><p>Transferencia de paquetes entre diferentes centros de distribución o almacenes.</p>
     </article>
     <article class="card">
       <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20h-5v-5h-6v5H4v-9.5z"/></svg></div>
-      <h3>ULTIMA MILLA</h3><p>Este servicio se encarga de la entrega final de los paquetes hasta la puerta del cliente, asegurando que reciban sus envíos en el lugar y momento acordados.</p>
+      <h3>ULTIMA MILLA</h3><p>Entrega final hasta la puerta del cliente, asegurando el lugar y momento acordados.</p>
     </article>
   </div>
 </div>
@@ -60,16 +61,15 @@
 <section id="nosotros" class="section">
 <div class="container">
   <h2>Quiénes somos</h2>
-  <p>Somus una empresa con 5 años de experiencia en el sector de mensajería y paquetería.
-     Desde nuestra sede en la Ciudad de México, hemos crecido y nos hemos consolidado como un actor clave en la logística nacional, ofreciendo soluciones efectivas para la entrega en primera, media y última milla.
-      Lo que nos hace únicos es nuestro enfoque en el servicio personalizado, la flexibilidad y el compromiso con la satisfacción del cliente. 
-      Contamos con una flota variada y un equipo entregado que nos permite adaptarnos a las necesidades específicas de cada cliente, garantizando un servicio confiable y eficiente.</p>
-      <P></P>
-   <P>Objetivos</P>
-  <ul><li>Proporcionar un servicio de entrega de alta calidad en primera, media y última milla.</li>
-    <li>Mejorar la eficiencia operativa y reducir los tiempos de entrega.</li>
-    <li>Expandir nuestra presencia en el mercado nacional, aumentando nuestra base de clientes.</li>
-     <li>Ampliar nuestra flota en un 40% para atender la creciente demanda del mercado en nuestro proximo año.</li></ul>
+  <p>Somos una empresa con 5 años de experiencia en el sector de mensajería y paquetería. Desde nuestra sede en la Ciudad de México, nos hemos consolidado como un actor clave en la logística nacional. Lo que nos hace únicos es nuestro enfoque personalizado y el compromiso con la satisfacción del cliente, contando con una flota variada y un equipo dedicado.</p>
+  
+  <h3>Objetivos</h3>
+  <ul>
+    <li>Proporcionar un servicio de entrega de alta calidad en todas las etapas.</li>
+    <li>Mejorar la eficiencia operativa y reducir tiempos de entrega.</li>
+    <li>Expandir nuestra presencia en el mercado nacional.</li>
+    <li>Ampliar nuestra flota en un 40% durante el próximo año.</li>
+  </ul>
 </div>
 </section>
 
@@ -77,17 +77,15 @@
 <div class="container coverage-layout">
   <div class="coverage-map">
     <div class="map-zoom" id="mapZoom">
-      <img src="imagenes/mapa.png" alt="Mapa de cobertura de TERCAM" id="coverageMap">
+      <img src="imagenes/mapa.png" alt="Mapa de cobertura" id="coverageMap">
       <div class="map-controls">
-        <button type="button" id="zoomOut">-</button>
-        <button type="button" id="zoomIn">+</button>
+        <button type="button" id="zoomOut">-</button><button type="button" id="zoomIn">+</button>
       </div>
     </div>
   </div>
   <div class="coverage-copy">
     <h2>Cobertura</h2>
-    <p>Estamos disponibles en distintos estados del país para ofrecer entregas rápidas, seguras y confiables.</p>
-    <p>Atendemos rutas locales, regionales y nacionales, adaptándonos a las necesidades de cada cliente.</p>
+    <p>Disponibles en distintos estados para ofrecer entregas seguras. Atendemos rutas locales, regionales y nacionales.</p>
   </div>
 </div>
 </section>
@@ -96,9 +94,9 @@
 <div class="container contact-section">
   <h2>Contacto</h2>
   <form class="contact-form" id="contactForm">
-    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-    <input type="email" id="correo" name="correo" placeholder="Tu correo" required>
-    <input type="tel" id="telefono" name="telefono" placeholder="Número telefónico" required>
+    <input type="text" id="nombre" placeholder="Tu nombre" required>
+    <input type="email" id="correo" placeholder="Tu correo" required>
+    <input type="tel" id="telefono" placeholder="Número telefónico" required>
     <button type="submit">Enviar</button>
     <p id="formMessage"></p>
   </form>
@@ -113,12 +111,8 @@
     <p>TERCAM@GMAIL.COM | 5510474589</p>
   </div>
   <div class="social-icons">
-    <a href="https://www.facebook.com/profile.php?id=100090297065263&locale=es_LA" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.6 1.6-1.6h1.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H8v3h2.6v8h2.9z"/></svg>
-    </a>
-    <a href="https://www.instagram.com/grupo_tercam/" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zm10.5 1.6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 15a2.8 2.8 0 0 0 0-5.6z"/></svg>
-    </a>
+    <a href="https://facebook.com/..." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.6 1.6-1.6h1.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H8v3h2.6v8h2.9z"/></svg></a>
+    <a href="https://instagram.com/..." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zm10.5 1.6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 15a2.8 2.8 0 0 0 0-5.6z"/></svg></a>
   </div>
 </div>
 </footer>

@@ -1,86 +1,92 @@
-const f = document.getElementById("contactForm");
-const msg = document.getElementById("formMessage");
 
-if (f && msg) {
-  f.addEventListener("submit", (e) => {
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formMessage");
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const n = document.getElementById("nombre").value.trim();
-    const c = document.getElementById("correo").value.trim();
-    const t = document.getElementById("telefono").value.trim();
+    const data = {
+      nombre: document.getElementById("nombre").value.trim(),
+      correo: document.getElementById("correo").value.trim(),
+      tel: document.getElementById("telefono").value.trim()
+    };
 
-    if (!n || !c || !t) {
-      msg.textContent = "Por favor completa todos los campos.";
+    // Validaciones rápidas
+    if (Object.values(data).some(val => !val)) {
+      formStatus.textContent = "Por favor, completa todos los campos.";
       return;
     }
 
-    if (n.length < 5) {
-      msg.textContent = "El nombre debe tener minimo 5 caracteres.";
+    if (data.nombre.length < 5) {
+      formStatus.textContent = "El nombre es demasiado corto.";
       return;
     }
 
-    if (!/^\d+$/.test(t)) {
-      msg.textContent = "El numero telefonico solo debe contener numeros.";
+    if (!/^\d+$/.test(data.tel)) {
+      formStatus.textContent = "El teléfono solo debe contener números.";
       return;
     }
 
-    msg.textContent = "Mensaje enviado correctamente.";
-    f.reset();
+    // Éxito
+    formStatus.style.color = "var(--color4)";
+    formStatus.textContent = "¡Mensaje enviado con éxito!";
+    contactForm.reset();
+    
+    setTimeout(() => { formStatus.textContent = ""; }, 4000);
   });
 }
-const coverageMap = document.getElementById("coverageMap");
-const mapZoom = document.getElementById("mapZoom");
-const zoomIn = document.getElementById("zoomIn");
-const zoomOut = document.getElementById("zoomOut");
 
-let mapScale = 1;
-let mapX = 0;
-let mapY = 0;
-let isDragging = false;
+// --- Lógica del Mapa Interactivo ---
+const imgMap = document.getElementById("coverageMap");
+const mapContainer = document.getElementById("mapZoom");
+const btnIn = document.getElementById("zoomIn");
+const btnOut = document.getElementById("zoomOut");
 
-let startX = 0;
-let startY = 0;
+let state = { scale: 1, x: 0, y: 0, active: false, startX: 0, startY: 0 };
 
-function updateMapZoom() {
-  if (coverageMap) {
-    coverageMap.style.transform = `translate(${mapX}px, ${mapY}px) scale(${mapScale})`;
+const renderMap = () => {
+  if (imgMap) {
+    imgMap.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.scale})`;
   }
-}
+};
 
-if (coverageMap && mapZoom && zoomIn && zoomOut) {
-  zoomIn.addEventListener("click", () => {
-    mapScale = Math.min(mapScale + 0.4, 6);
-    updateMapZoom();
+if (imgMap && mapContainer) {
+  // 
+  btnIn?.addEventListener("click", () => {
+    state.scale = Math.min(state.scale + 0.5, 5);
+    renderMap();
   });
 
-  zoomOut.addEventListener("click", () => {
-    mapScale = Math.max(mapScale - 0.4, 1);
-
-    if (mapScale === 1) {
-      mapX = 0;
-      mapY = 0;
-    }
-
-    updateMapZoom();
+  btnOut?.addEventListener("click", () => {
+    state.scale = Math.max(state.scale - 0.5, 1);
+    if (state.scale === 1) { state.x = 0; state.y = 0; }
+    renderMap();
   });
 
-  mapZoom.addEventListener("mousedown", (e) => {
-    if (mapScale <= 1) return;
-
-    isDragging = true;
-    startX = e.clientX - mapX;
-    startY = e.clientY - mapY;
+  // 
+  mapContainer.addEventListener("mousedown", (e) => {
+    if (state.scale <= 1) return;
+    state.active = true;
+    state.startX = e.clientX - state.x;
+    state.startY = e.clientY - state.y;
   });
 
   window.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-
-    mapX = e.clientX - startX;
-    mapY = e.clientY - startY;
-    updateMapZoom();
+    if (!state.active) return;
+    state.x = e.clientX - state.startX;
+    state.y = e.clientY - state.startY;
+    renderMap();
   });
 
-  window.addEventListener("mouseup", () => {
-    isDragging = false;
-  });
+  window.addEventListener("mouseup", () => { state.active = false; });
+
+  // 
+  mapContainer.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.2 : 0.2;
+    state.scale = Math.min(Math.max(state.scale + delta, 1), 5);
+    if (state.scale === 1) { state.x = 0; state.y = 0; }
+    renderMap();
+  }, { passive: false });
 }
