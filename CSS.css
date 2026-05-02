@@ -33,7 +33,7 @@ body { margin: 0; font-family: "Inter", sans-serif; line-height: 1.5; background
 .contact-video { position: relative; z-index: 1; }
 .contact-video video { width: 100%; max-width: 560px; display: block; border-radius: 20px; border: 4px solid rgba(163, 18, 23, 0.22); box-shadow: 0 22px 45px rgba(43, 43, 43, 0.2); background-color: var(--color5); }
 
-/* Servicios & Cards */
+/* Servicios */
 #servicios { background: linear-gradient(180deg, #ff8200 0%, #ff7000 100%); }
 #servicios h2 { margin-top: 0; margin-bottom: 1.5rem; color: var(--white); font-size: 2.2rem; }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }

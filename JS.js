@@ -12,7 +12,7 @@ if (contactForm && formStatus) {
       tel: document.getElementById("telefono").value.trim()
     };
 
-    // Validaciones rápidas
+    // 
     if (Object.values(data).some(val => !val)) {
       formStatus.textContent = "Por favor, completa todos los campos.";
       return;
@@ -28,7 +28,7 @@ if (contactForm && formStatus) {
       return;
     }
 
-    // Éxito
+    // 
     formStatus.style.color = "var(--color4)";
     formStatus.textContent = "¡Mensaje enviado con éxito!";
     contactForm.reset();
@@ -37,7 +37,7 @@ if (contactForm && formStatus) {
   });
 }
 
-// --- Lógica del Mapa Interactivo ---
+
 const imgMap = document.getElementById("coverageMap");
 const mapContainer = document.getElementById("mapZoom");
 const btnIn = document.getElementById("zoomIn");
