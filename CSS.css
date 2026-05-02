@@ -48,9 +48,102 @@ body { margin: 0; font-family: "Inter", sans-serif; line-height: 1.5; background
 .card p { position: relative; margin: 0; font-size: 1.05rem; line-height: 1.6; color: rgba(43, 43, 43, 0.92); z-index: 1; }
 
 /* Otros */
-#nosotros { background: linear-gradient(180deg, #ffb300 0%, #ffbf2d 100%); }
-#nosotros h2 { margin-top: 0; color: var(--color4); font-size: 2.2rem; }
-#nosotros p, #nosotros li { color: var(--color5); }
+.about-section {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(227, 6, 19, 0.18), transparent 28%),
+    linear-gradient(135deg, #ffb300 0%, #ffc233 48%, #ff9800 100%);
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-copy {
+  padding: 2rem 0;
+}
+
+.about-tag {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: rgba(163, 18, 23, 0.12);
+  color: var(--color4);
+  font-weight: 800;
+}
+
+.about-copy h2 {
+  margin: 0 0 1rem;
+  color: var(--color4);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1;
+}
+
+.about-copy p {
+  margin: 0;
+  max-width: 720px;
+  color: var(--color5);
+  font-size: 1.12rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about-stats div {
+  padding: 1.1rem;
+  border-radius: 18px;
+  background: rgba(255, 253, 208, 0.48);
+  box-shadow: inset 0 0 0 1px rgba(163, 18, 23, 0.1);
+}
+
+.about-stats strong {
+  display: block;
+  color: var(--color4);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.about-stats span {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--color5);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.about-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 24px;
+  background: linear-gradient(160deg, #fff3bf 0%, #ffca3a 100%);
+  box-shadow: 0 22px 45px rgba(43, 43, 43, 0.18);
+  border: 1px solid rgba(163, 18, 23, 0.16);
+}
+
+.about-card h3 {
+  margin: 0 0 1rem;
+  color: var(--color4);
+  font-size: 1.8rem;
+}
+
+.about-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.about-card li {
+  margin-bottom: 0.8rem;
+  color: var(--color5);
+  font-weight: 600;
+}
+
 
 .coverage { background: linear-gradient(180deg, #ff6d00 0%, #eb5f00 100%); }
 
@@ -140,4 +233,5 @@ body { margin: 0; font-family: "Inter", sans-serif; line-height: 1.5; background
   .hero { padding: 3.5rem 0; }
   .hero-content h2 { font-size: 2.9rem; }
   .contact-video video { max-width: 100%; }
+  .about-layout, .about-stats { grid-template-columns: 1fr; }
 }
