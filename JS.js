@@ -1,4 +1,4 @@
-
+/* --- FORMULARIO DE CONTACTO --- */
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formMessage");
 
@@ -12,38 +12,50 @@ if (contactForm && formStatus) {
       tel: document.getElementById("telefono").value.trim()
     };
 
-    // 
+    // Validación de campos vacíos
     if (Object.values(data).some(val => !val)) {
       formStatus.textContent = "Por favor, completa todos los campos.";
       return;
     }
 
+    // Validación de longitud
     if (data.nombre.length < 5) {
       formStatus.textContent = "El nombre es demasiado corto.";
       return;
     }
 
+    // Validación de formato telefónico
     if (!/^\d+$/.test(data.tel)) {
       formStatus.textContent = "El teléfono solo debe contener números.";
       return;
     }
 
-    // 
+    // Éxito en el envío
     formStatus.style.color = "var(--color4)";
     formStatus.textContent = "¡Mensaje enviado con éxito!";
     contactForm.reset();
-    
-    setTimeout(() => { formStatus.textContent = ""; }, 4000);
+
+    setTimeout(() => {
+      formStatus.textContent = "";
+    }, 4000);
   });
 }
 
 
+/* --- MAPA INTERACTIVO (ZOOM & DRAG) --- */
 const imgMap = document.getElementById("coverageMap");
 const mapContainer = document.getElementById("mapZoom");
 const btnIn = document.getElementById("zoomIn");
 const btnOut = document.getElementById("zoomOut");
 
-let state = { scale: 1, x: 0, y: 0, active: false, startX: 0, startY: 0 };
+let state = { 
+  scale: 1, 
+  x: 0, 
+  y: 0, 
+  active: false, 
+  startX: 0, 
+  startY: 0 
+};
 
 const renderMap = () => {
   if (imgMap) {
@@ -52,7 +64,8 @@ const renderMap = () => {
 };
 
 if (imgMap && mapContainer) {
-  // 
+  
+  // Controles de Botones
   btnIn?.addEventListener("click", () => {
     state.scale = Math.min(state.scale + 0.5, 5);
     renderMap();
@@ -60,11 +73,14 @@ if (imgMap && mapContainer) {
 
   btnOut?.addEventListener("click", () => {
     state.scale = Math.max(state.scale - 0.5, 1);
-    if (state.scale === 1) { state.x = 0; state.y = 0; }
+    if (state.scale === 1) { 
+      state.x = 0; 
+      state.y = 0; 
+    }
     renderMap();
   });
 
-  // 
+  // Funcionalidad de Arrastre (Drag)
   mapContainer.addEventListener("mousedown", (e) => {
     if (state.scale <= 1) return;
     state.active = true;
@@ -79,18 +95,26 @@ if (imgMap && mapContainer) {
     renderMap();
   });
 
-  window.addEventListener("mouseup", () => { state.active = false; });
+  window.addEventListener("mouseup", () => { 
+    state.active = false; 
+  });
 
-  // 
+  // Control con Rueda del Ratón
   mapContainer.addEventListener("wheel", (e) => {
     e.preventDefault();
     const delta = e.deltaY > 0 ? -0.2 : 0.2;
     state.scale = Math.min(Math.max(state.scale + delta, 1), 5);
-    if (state.scale === 1) { state.x = 0; state.y = 0; }
+    
+    if (state.scale === 1) { 
+      state.x = 0; 
+      state.y = 0; 
+    }
     renderMap();
   }, { passive: false });
 }
 
+
+/* --- GALERÍA DE VEHÍCULOS --- */
 const vehicleItems = Array.from(document.querySelectorAll(".vehicle-item"));
 const vehiclePrev = document.getElementById("vehiclePrev");
 const vehicleNext = document.getElementById("vehicleNext");
@@ -125,6 +149,8 @@ function renderVehicles() {
 }
 
 if (vehicleItems.length && vehiclePrev && vehicleNext) {
+  
+  // Navegación con flechas
   vehiclePrev.addEventListener("click", () => {
     activeVehicle = activeVehicle === 0 ? vehicleItems.length - 1 : activeVehicle - 1;
     renderVehicles();
@@ -135,6 +161,7 @@ if (vehicleItems.length && vehiclePrev && vehicleNext) {
     renderVehicles();
   });
 
+  // Navegación por clic directo en la imagen
   vehicleItems.forEach((item, index) => {
     item.addEventListener("click", () => {
       activeVehicle = index;
@@ -142,5 +169,6 @@ if (vehicleItems.length && vehiclePrev && vehicleNext) {
     });
   });
 
+  // Inicialización
   renderVehicles();
 }
