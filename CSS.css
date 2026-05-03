@@ -239,29 +239,46 @@ body { margin: 0; font-family: "Inter", sans-serif; line-height: 1.5; background
 }
 
 .vehicle-stage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.2rem;
-  min-height: 360px;
+  position: relative;
+  min-height: 430px;
   overflow: hidden;
 }
 
 .vehicle-item {
-  flex: 0 0 28%;
-  opacity: 0.65;
-  transform: scale(0.84);
-  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
-  filter: saturate(0.85);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(28%, 300px);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.72);
+  transition: transform 0.35s ease, opacity 0.35s ease, filter 0.35s ease;
+  filter: saturate(0.75);
+  pointer-events: none;
 }
 
 .vehicle-item.is-active {
-  flex-basis: 38%;
+  width: min(40%, 420px);
   opacity: 1;
-  transform: scale(1.08);
+  transform: translate(-50%, -50%) scale(1);
   filter: saturate(1);
-  z-index: 2;
+  z-index: 3;
+  pointer-events: auto;
 }
+
+.vehicle-item.is-prev {
+  opacity: 0.68;
+  transform: translate(-165%, -50%) scale(0.82);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.vehicle-item.is-next {
+  opacity: 0.68;
+  transform: translate(65%, -50%) scale(0.82);
+  z-index: 2;
+  pointer-events: auto;
+}
+
 
 .vehicle-item img {
   width: 100%;

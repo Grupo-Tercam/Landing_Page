@@ -100,8 +100,20 @@ const vehicleDescription = document.getElementById("vehicleDescription");
 let activeVehicle = 0;
 
 function renderVehicles() {
+  const total = vehicleItems.length;
+  const prevIndex = activeVehicle === 0 ? total - 1 : activeVehicle - 1;
+  const nextIndex = activeVehicle === total - 1 ? 0 : activeVehicle + 1;
+
   vehicleItems.forEach((item, index) => {
-    item.classList.toggle("is-active", index === activeVehicle);
+    item.classList.remove("is-active", "is-prev", "is-next");
+
+    if (index === activeVehicle) {
+      item.classList.add("is-active");
+    } else if (index === prevIndex) {
+      item.classList.add("is-prev");
+    } else if (index === nextIndex) {
+      item.classList.add("is-next");
+    }
   });
 
   const current = vehicleItems[activeVehicle];
