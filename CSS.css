@@ -206,6 +206,113 @@ body { margin: 0; font-family: "Inter", sans-serif; line-height: 1.5; background
 .coverage-copy h2 { margin-top: 0; color: var(--white); font-size: 2.2rem; }
 .coverage-copy p { color: #fff3de; }
 
+.vehicles-section {
+  background: linear-gradient(180deg, #ff6d00 0%, #ffb300 100%);
+}
+
+.vehicles-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.vehicles-tag {
+  display: inline-block;
+  margin: 0 0 0.8rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.35);
+  color: var(--color4);
+  font-weight: 800;
+}
+
+.vehicles-heading h2 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.vehicle-gallery {
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.vehicle-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.vehicle-item {
+  flex: 0 0 28%;
+  opacity: 0.65;
+  transform: scale(0.84);
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+  filter: saturate(0.85);
+}
+
+.vehicle-item.is-active {
+  flex-basis: 38%;
+  opacity: 1;
+  transform: scale(1.08);
+  filter: saturate(1);
+  z-index: 2;
+}
+
+.vehicle-item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 22px 42px rgba(43, 43, 43, 0.22);
+  background-color: var(--white);
+}
+
+.gallery-btn {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color2), var(--color3));
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(43, 43, 43, 0.2);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.gallery-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.vehicle-text {
+  max-width: 760px;
+  margin: 2rem auto 0;
+  text-align: center;
+  color: var(--white);
+}
+
+.vehicle-text h3 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.vehicle-text p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fff3de;
+}
+
+
 /* Contacto */
 #contacto { background: linear-gradient(180deg, #ffb300 0%, #ff9f00 100%); }
 .contact-section { max-width: 780px; }

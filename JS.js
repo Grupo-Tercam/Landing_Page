@@ -90,3 +90,45 @@ if (imgMap && mapContainer) {
     renderMap();
   }, { passive: false });
 }
+
+const vehicleItems = Array.from(document.querySelectorAll(".vehicle-item"));
+const vehiclePrev = document.getElementById("vehiclePrev");
+const vehicleNext = document.getElementById("vehicleNext");
+const vehicleTitle = document.getElementById("vehicleTitle");
+const vehicleDescription = document.getElementById("vehicleDescription");
+
+let activeVehicle = 0;
+
+function renderVehicles() {
+  vehicleItems.forEach((item, index) => {
+    item.classList.toggle("is-active", index === activeVehicle);
+  });
+
+  const current = vehicleItems[activeVehicle];
+
+  if (current && vehicleTitle && vehicleDescription) {
+    vehicleTitle.textContent = current.dataset.title;
+    vehicleDescription.textContent = current.dataset.text;
+  }
+}
+
+if (vehicleItems.length && vehiclePrev && vehicleNext) {
+  vehiclePrev.addEventListener("click", () => {
+    activeVehicle = activeVehicle === 0 ? vehicleItems.length - 1 : activeVehicle - 1;
+    renderVehicles();
+  });
+
+  vehicleNext.addEventListener("click", () => {
+    activeVehicle = activeVehicle === vehicleItems.length - 1 ? 0 : activeVehicle + 1;
+    renderVehicles();
+  });
+
+  vehicleItems.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      activeVehicle = index;
+      renderVehicles();
+    });
+  });
+
+  renderVehicles();
+}
