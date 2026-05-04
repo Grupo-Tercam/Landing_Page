@@ -839,4 +839,29 @@ body {
     text-align: center;
     justify-content: center;
   }
+  
+}
+.footer-contact {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.footer-contact svg {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
