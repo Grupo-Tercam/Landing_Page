@@ -570,7 +570,10 @@ body {
 
 /* Contacto */
 #contacto {
-  background: linear-gradient(180deg, #ffb300 0%, #ff9f00 100%);
+  background:
+    radial-gradient(circle at top left, rgba(227, 6, 19, 0.16), transparent 28%),
+    linear-gradient(180deg, #ff6d00 0%, #ffb300 22%, #ff9f00 100%);
+  box-shadow: inset 0 18px 0 rgba(163, 18, 23, 0.22);
 }
 
 .contact-section {
