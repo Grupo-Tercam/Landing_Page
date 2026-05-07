@@ -31,7 +31,7 @@ body {
 }
 
 .site-header {
-  background: linear-gradient(180deg, #ffb300 0%, #ffae00 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #ffae00 100%);
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -83,7 +83,7 @@ body {
   background:
     radial-gradient(circle at top right, rgba(227, 6, 19, 0.14), transparent 30%),
     radial-gradient(circle at bottom left, rgba(255, 109, 0, 0.18), transparent 28%),
-    linear-gradient(135deg, #ffb300 0%, #ff9800 45%, #ff6d00 100%);
+    linear-gradient(135deg, #ffb300 10%, #ff9800 45%, #ff6d00 100%);
   padding: 4.5rem 0;
   overflow: hidden;
 }
@@ -97,7 +97,7 @@ body {
 
 
 .hero-content {
-  max-width: 650px;
+  max-width: 700px;
 }
 
 .hero-tag {
@@ -114,8 +114,8 @@ body {
 
 .hero-content h2 {
   margin: 0;
-  max-width: 620px;
-  font-size: 4.6rem;
+  max-width: 200px;
+  font-size: 2.5rem;
   line-height: 1;
   letter-spacing: 0;
   color: var(--color5);
