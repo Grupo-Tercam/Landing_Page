@@ -172,4 +172,4 @@ if (vehicleItems.length && vehiclePrev && vehicleNext) {
   // Inicialización
   renderVehicles();
 }
-// oamgnes 
+
