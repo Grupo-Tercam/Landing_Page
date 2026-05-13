@@ -31,7 +31,7 @@ body {
 }
 
 .site-header {
-  background: linear-gradient(180deg, #FFFFFF 0%, #ffae00 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
   padding: 1rem 0;
   position: sticky;
   top: 0;
