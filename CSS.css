@@ -31,7 +31,7 @@ body {
 }
 
 .site-header {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -45,6 +45,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  position: relative;
 }
 
 .brand-logo {
@@ -52,18 +53,57 @@ body {
   display: block;
 }
 
+.menu-toggle {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color2), var(--color3));
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(163, 18, 23, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
 .site-nav {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-left: auto;
-  justify-content: flex-end;
+  position: absolute;
+  top: calc(100% + 1rem);
+  right: 0;
+  width: min(150px, 55vw);
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffb300 0%, #ff9800 100%);
+  box-shadow: 0 20px 40px rgba(43, 43, 43, 0.22);
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 30;
+}
+
+.site-nav.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .site-nav a {
-  display: inline-block;
-  padding: 0.85rem 1.7rem;
+  display: block;
+  width: 100%;
+  padding: 0.85rem 1rem;
   color: var(--white);
+  text-align: center;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 700;
@@ -78,6 +118,7 @@ body {
   box-shadow: 0 16px 28px rgba(163, 18, 23, 0.24);
   filter: brightness(1.05);
 }
+
 
 .hero {
   background:
