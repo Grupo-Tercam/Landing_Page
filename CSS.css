@@ -392,6 +392,14 @@ body {
   align-items: center;
 }
 
+.coverage-map {
+  order: 2;
+}
+
+.coverage-copy {
+  order: 1;
+}
+
 .map-zoom {
   position: relative;
   width: 100%;
@@ -1058,6 +1066,13 @@ body {
 .contact-form button {
   width: 100%;
   justify-content: center;
+}
+.coverage-map {
+  order: 1;
+}
+
+.coverage-copy {
+  order: 2;
 }
 
 
