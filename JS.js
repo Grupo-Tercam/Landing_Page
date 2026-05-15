@@ -2,44 +2,31 @@
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formMessage");
 
+/* --- FORMULARIO DE CONTACTO --- */
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formMessage");
+
 if (contactForm && formStatus) {
   contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+    const nombre = document.getElementById("nombre").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
 
-    const data = {
-      nombre: document.getElementById("nombre").value.trim(),
-      correo: document.getElementById("correo").value.trim(),
-      tel: document.getElementById("telefono").value.trim()
-    };
-
-    // Validación de campos vacíos
-    if (Object.values(data).some(val => !val)) {
-      formStatus.textContent = "Por favor, completa todos los campos.";
-      return;
-    }
-
-    // Validación de longitud
-    if (data.nombre.length < 5) {
+    if (nombre.length < 5) {
+      e.preventDefault();
       formStatus.textContent = "El nombre es demasiado corto.";
       return;
     }
 
-    // Validación de formato telefónico
-    if (!/^\d+$/.test(data.tel)) {
+    if (!/^[\d\s]+$/.test(telefono)) {
+      e.preventDefault();
       formStatus.textContent = "El teléfono solo debe contener números.";
       return;
     }
 
-    // Éxito en el envío
-    formStatus.style.color = "var(--color4)";
-    formStatus.textContent = "¡Mensaje enviado con éxito!";
-    contactForm.reset();
-
-    setTimeout(() => {
-      formStatus.textContent = "";
-    }, 4000);
+    formStatus.textContent = "Enviando mensaje...";
   });
 }
+
 
 
 /* --- MAPA INTERACTIVO (ZOOM & DRAG) --- */

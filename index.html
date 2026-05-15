@@ -223,39 +223,43 @@
       <p>Contáctanos y te ayudamos a hacerlo realidad.</p>
     </div>
 
-    <form class="contact-form" id="contactForm">
-      <div class="form-group">
-        <label for="nombre">Nombre <span>*</span></label>
-        <input type="text" id="nombre" placeholder="Nombre Apellido" required>
-      </div>
+   <form class="contact-form" id="contactForm" action="https://formsubmit.co/hunter.hunter.david@gmail.com" method="POST">
+  <input type="hidden" name="_subject" value="Nuevo mensaje desde la página de TERCAM">
+  <input type="hidden" name="_captcha" value="false">
 
-      <div class="form-group">
-        <label for="correo">E-mail <span>*</span></label>
-        <input type="email" id="correo" placeholder="usuario@dominio.com" required>
-      </div>
+  <div class="form-group">
+    <label for="nombre">Nombre <span>*</span></label>
+    <input type="text" id="nombre" name="Nombre" placeholder="Nombre Apellido" required>
+  </div>
 
-      <div class="form-group">
-        <label for="telefono">Teléfono <span>*</span></label>
-        <input type="tel" id="telefono" placeholder="55 1234 5678" required>
-      </div>
+  <div class="form-group">
+    <label for="correo">E-mail <span>*</span></label>
+    <input type="email" id="correo" name="Correo" placeholder="usuario@dominio.com" required>
+  </div>
 
-      <div class="form-group">
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" placeholder="¿Cómo podemos ayudarte?"></textarea>
-      </div>
+  <div class="form-group">
+    <label for="telefono">Teléfono <span>*</span></label>
+    <input type="tel" id="telefono" name="Telefono" placeholder="55 1234 5678" required>
+  </div>
 
-      <label class="privacy-check">
-        <input type="checkbox" required>
-        <span>Consiento el uso de mis datos para ser contactado.</span>
-      </label>
+  <div class="form-group">
+    <label for="mensaje">Mensaje</label>
+    <textarea id="mensaje" name="Mensaje" placeholder="¿Cómo podemos ayudarte?"></textarea>
+  </div>
 
-      <button type="submit">
-        Enviar
-        <i class="fa-regular fa-envelope"></i>
-      </button>
+  <label class="privacy-check">
+    <input type="checkbox" name="Consentimiento" value="Aceptado" required>
+    <span>Consiento el uso de mis datos para ser contactado.</span>
+  </label>
 
-      <p id="formMessage"></p>
-    </form>
+  <button type="submit">
+    Enviar
+    <i class="fa-regular fa-envelope"></i>
+  </button>
+
+  <p id="formMessage"></p>
+</form>
+
   </div>
 </div>
 </section>
