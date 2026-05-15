@@ -30,6 +30,7 @@ body {
   padding: 3rem 0;
 }
 
+/* Header */
 .site-header {
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
   padding: 1rem 0;
@@ -46,6 +47,11 @@ body {
   align-items: center;
   gap: 2rem;
   position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
 }
 
 .brand-logo {
@@ -80,8 +86,9 @@ body {
   right: 0;
   width: min(150px, 55vw);
   display: grid;
-  gap: 0.75rem;
-  padding: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
+  padding: 0.7rem;
   border-radius: 18px;
   background: linear-gradient(180deg, #ffb300 0%, #ff9800 100%);
   box-shadow: 0 20px 40px rgba(43, 43, 43, 0.22);
@@ -101,13 +108,13 @@ body {
 .site-nav a {
   display: block;
   width: 100%;
-  padding: 0.85rem 1rem;
+  padding: 0.6rem 0.75rem;
   color: var(--white);
   text-align: center;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.86rem;
   font-weight: 700;
-  border-radius: 14px;
+  border-radius: 12px;
   background: linear-gradient(135deg, var(--color2), var(--color3));
   box-shadow: 0 12px 24px rgba(163, 18, 23, 0.18);
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
@@ -119,7 +126,7 @@ body {
   filter: brightness(1.05);
 }
 
-
+/* Hero */
 .hero {
   background:
     radial-gradient(circle at top right, rgba(227, 6, 19, 0.14), transparent 30%),
@@ -136,9 +143,9 @@ body {
   align-items: center;
 }
 
-
 .hero-content {
-  max-width: 700px;
+  width: 100%;
+  max-width: 640px;
 }
 
 .hero-tag {
@@ -155,13 +162,14 @@ body {
 
 .hero-content h2 {
   margin: 0;
-  max-width: 200px;
-  font-size: 2.5rem;
-  line-height: 1;
+  width: 100%;
+  max-width: 640px;
+  font-size: 4rem;
+  line-height: 1.05;
   letter-spacing: 0;
+  white-space: normal;
   color: var(--color5);
 }
-
 
 .hero-visual {
   position: relative;
@@ -191,7 +199,7 @@ body {
   background-color: var(--color5);
 }
 
-
+/* Servicios */
 #servicios {
   background: linear-gradient(180deg, #ff8200 0%, #ff7000 100%);
 }
@@ -294,6 +302,7 @@ body {
   z-index: 1;
 }
 
+/* Nosotros */
 .about-section {
   background:
     radial-gradient(circle at 12% 20%, rgba(227, 6, 19, 0.18), transparent 28%),
@@ -381,23 +390,24 @@ body {
   font-weight: 600;
 }
 
+/* Cobertura */
 .coverage {
   background: linear-gradient(180deg, #ff6d00 0%, #eb5f00 100%);
 }
 
 .coverage-layout {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 2rem;
   align-items: center;
 }
 
-.coverage-map {
-  order: 2;
-}
-
 .coverage-copy {
   order: 1;
+}
+
+.coverage-map {
+  order: 2;
 }
 
 .map-zoom {
@@ -467,6 +477,7 @@ body {
   color: #fff3de;
 }
 
+/* Vehiculos */
 .vehicles-section {
   background: linear-gradient(180deg, #ff6d00 0%, #ffb300 100%);
 }
@@ -592,6 +603,7 @@ body {
   color: #fff3de;
 }
 
+/* Marcas */
 .brands-section {
   background:
     radial-gradient(circle at top right, rgba(227, 6, 19, 0.14), transparent 28%),
@@ -650,7 +662,6 @@ body {
   box-shadow: 0 24px 44px rgba(43, 43, 43, 0.24);
   z-index: 2;
 }
-
 
 /* Contacto */
 #contacto {
@@ -786,6 +797,7 @@ body {
   color: var(--white);
 }
 
+/* Footer */
 .site-footer {
   background: linear-gradient(180deg, var(--color4) 0%, #851015 100%);
   color: var(--white);
@@ -844,33 +856,30 @@ body {
   color: currentColor;
 }
 
+/* Responsive */
 @media (max-width: 1100px) {
   .header-layout {
     width: min(94%, 1000px);
     gap: 1rem;
   }
 
-  .site-nav {
-    gap: 0.6rem;
-  }
-
-  .site-nav a {
-    padding: 0.75rem 1rem;
-    font-size: 0.95rem;
-  }
-
   .brand-logo {
-    width: 10.5rem;
+    width: 7.5rem;
   }
 
   .hero-content h2 {
-    font-size: 4rem;
+    font-size: 3.3rem;
   }
 
   .hero-layout,
   .coverage-layout,
   .about-layout {
     grid-template-columns: 1fr;
+  }
+
+  .coverage-copy,
+  .coverage-map {
+    order: initial;
   }
 
   .about-stats {
@@ -881,34 +890,42 @@ body {
 @media (max-width: 768px) {
   .site-header {
     position: static;
-    padding: 0.9rem 0;
+    padding: 0.7rem 0;
   }
 
   .header-layout {
-    width: min(94%, 560px);
-    flex-direction: column;
+    width: min(92%, 560px);
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     gap: 1rem;
   }
 
   .brand-logo {
-    width: 11.5rem;
+    width: 7.5rem;
+  }
+
+  .menu-toggle {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    font-size: 1.15rem;
   }
 
   .site-nav {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.65rem;
+    top: calc(100% + 0.6rem);
+    right: 0;
+    width: min(160px, 72vw);
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    padding: 0.65rem;
     margin-left: 0;
   }
 
   .site-nav a {
-    width: 100%;
-    text-align: center;
-    padding: 0.75rem 0.7rem;
-    font-size: 0.92rem;
-    border-radius: 12px;
+    padding: 0.55rem 0.65rem;
+    font-size: 0.84rem;
+    border-radius: 10px;
   }
 
   .section,
@@ -929,8 +946,9 @@ body {
   }
 
   .hero-content h2 {
-    font-size: 3rem;
-    line-height: 1;
+    max-width: 100%;
+    font-size: 2.8rem;
+    line-height: 1.05;
   }
 
   .hero-tag {
@@ -947,7 +965,8 @@ body {
   }
 
   .about-copy h2,
-  .vehicles-heading h2 {
+  .vehicles-heading h2,
+  .brands-heading h2 {
     font-size: 2.7rem;
   }
 
@@ -1001,6 +1020,29 @@ body {
     font-size: 1.45rem;
   }
 
+  .brand-bubble {
+    width: 6.6rem;
+    height: 6.6rem;
+  }
+
+  .contact-panel {
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+
+  .contact-heading h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-heading p {
+    font-size: 1rem;
+  }
+
+  .contact-form button {
+    width: 100%;
+    justify-content: center;
+  }
+
   .footer-content {
     flex-direction: column;
     text-align: center;
@@ -1013,20 +1055,20 @@ body {
     width: min(92%, 360px);
   }
 
-  
   .hero-content h2 {
-  font-size: 3.6rem;
-}
-
+    max-width: 100%;
+    font-size: 2.35rem;
+  }
 
   .about-copy h2,
-  .vehicles-heading h2 {
+  .vehicles-heading h2,
+  .brands-heading h2 {
     font-size: 2.25rem;
   }
 
   .site-nav a {
-    font-size: 0.88rem;
-    padding: 0.7rem 0.5rem;
+    font-size: 0.82rem;
+    padding: 0.52rem 0.55rem;
   }
 
   .vehicle-gallery {
@@ -1042,38 +1084,4 @@ body {
   .footer-contact p {
     font-size: 0.9rem;
   }
-  .brands-heading h2 {
-  font-size: 2.7rem;
-}
-
-.brand-bubble {
-  width: 6.6rem;
-  height: 6.6rem;
-}
-.contact-panel {
-  padding: 1.5rem;
-  border-radius: 18px;
-}
-
-.contact-heading h2 {
-  font-size: 1.6rem;
-}
-
-.contact-heading p {
-  font-size: 1rem;
-}
-
-.contact-form button {
-  width: 100%;
-  justify-content: center;
-}
-.coverage-map {
-  order: 1;
-}
-
-.coverage-copy {
-  order: 2;
-}
-
-
 }
