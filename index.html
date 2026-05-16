@@ -215,40 +215,33 @@
 </section>
 
 
-<section id="contacto" class="section contact-area">
-<div class="container contact-section">
-  <div class="contact-panel">
-    <div class="contact-heading">
-      <h2>¿Quieres colaborar con TERCAM?</h2>
-      <p>Contáctanos y te ayudamos a hacerlo realidad.</p>
-    </div>
-
-   <form class="contact-form" id="contactForm" action="https://formsubmit.co/hunter.hunter.david@gmail.com" method="POST">
-  <input type="hidden" name="_subject" value="Nuevo mensaje desde la página de TERCAM">
+<form class="contact-form" id="contactForm" action="https://formsubmit.co/hunter.hunter.david@gmail.com" method="POST">
+  <input type="hidden" name="_subject" value="Nuevo mensaje desde TERCAM">
   <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
 
   <div class="form-group">
     <label for="nombre">Nombre <span>*</span></label>
-    <input type="text" id="nombre" name="Nombre" placeholder="Nombre Apellido" required>
+    <input type="text" id="nombre" name="name" placeholder="Nombre Apellido" required>
   </div>
 
   <div class="form-group">
     <label for="correo">E-mail <span>*</span></label>
-    <input type="email" id="correo" name="Correo" placeholder="usuario@dominio.com" required>
+    <input type="email" id="correo" name="email" placeholder="usuario@dominio.com" required>
   </div>
 
   <div class="form-group">
     <label for="telefono">Teléfono <span>*</span></label>
-    <input type="tel" id="telefono" name="Telefono" placeholder="55 1234 5678" required>
+    <input type="tel" id="telefono" name="phone" placeholder="55 1234 5678" required>
   </div>
 
   <div class="form-group">
     <label for="mensaje">Mensaje</label>
-    <textarea id="mensaje" name="Mensaje" placeholder="¿Cómo podemos ayudarte?"></textarea>
+    <textarea id="mensaje" name="message" placeholder="¿Cómo podemos ayudarte?"></textarea>
   </div>
 
   <label class="privacy-check">
-    <input type="checkbox" name="Consentimiento" value="Aceptado" required>
+    <input type="checkbox" name="consentimiento" value="Aceptado" required>
     <span>Consiento el uso de mis datos para ser contactado.</span>
   </label>
 
@@ -260,9 +253,6 @@
   <p id="formMessage"></p>
 </form>
 
-  </div>
-</div>
-</section>
 
 
 <footer class="site-footer">
