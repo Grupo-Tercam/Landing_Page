@@ -1085,3 +1085,133 @@ body {
     font-size: 0.9rem;
   }
 }
+/* información */
+.info-hero {
+  background:
+    radial-gradient(circle at top right, rgba(227, 6, 19, 0.14), transparent 30%),
+    linear-gradient(135deg, #ffb300 0%, #ff9800 48%, #ff6d00 100%);
+}
+
+.info-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.info-copy h1 {
+  margin: 0 0 1rem;
+  max-width: 760px;
+  color: var(--color5);
+  font-size: 4rem;
+  line-height: 1.05;
+}
+
+.info-copy p {
+  margin: 0;
+  font-size: 1.08rem;
+  max-width: 680px;
+}
+
+.info-card {
+  padding: 2rem;
+  border-radius: 24px;
+  background: linear-gradient(160deg, #fff3bf 0%, #ffca3a 100%);
+  box-shadow: 0 22px 45px rgba(43, 43, 43, 0.18);
+  border: 1px solid rgba(163, 18, 23, 0.16);
+}
+
+.info-card h2,
+.info-section h2,
+.info-section-alt h2,
+.info-cta h2 {
+  margin-top: 0;
+}
+
+.info-section {
+  background: linear-gradient(180deg, #ff8200 0%, #ff7000 100%);
+}
+
+.info-section h2 {
+  color: var(--white);
+  font-size: 2.2rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.info-section-alt {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(227, 6, 19, 0.18), transparent 28%),
+    linear-gradient(135deg, #ffb300 0%, #ffc233 48%, #ff9800 100%);
+}
+
+.info-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.info-two-columns h2 {
+  color: var(--color4);
+  font-size: 2.2rem;
+}
+
+.info-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.info-list li {
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.info-cta {
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(227, 6, 19, 0.16), transparent 28%),
+    linear-gradient(180deg, #ff6d00 0%, #ffb300 100%);
+}
+
+.info-cta h2 {
+  color: var(--white);
+  font-size: 2.6rem;
+}
+
+.info-cta p {
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  color: #fff3de;
+  font-size: 1.08rem;
+}
+
+.info-button {
+  display: inline-block;
+  padding: 0.95rem 1.4rem;
+  border-radius: 999px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color2), var(--color3));
+  box-shadow: 0 14px 26px rgba(43, 43, 43, 0.2);
+}
+
+@media (max-width: 768px) {
+  .info-layout,
+  .info-grid,
+  .info-two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .info-copy h1 {
+    font-size: 2.6rem;
+  }
+
+  .info-cta h2 {
+    font-size: 2rem;
+  }
+}
