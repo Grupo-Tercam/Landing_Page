@@ -1,5 +1,6 @@
 /* --- FORMULARIO DE CONTACTO --- */
-const contactForm = document.getElementById("contactForm");
+// CORREGIDO: Selecciona por clase ya que el HTML no tiene ID 'contactForm'
+const contactForm = document.querySelector(".contact-form");
 const formStatus = document.getElementById("formMessage");
 
 if (contactForm && formStatus) {
@@ -10,21 +11,24 @@ if (contactForm && formStatus) {
     if (nombre.length < 5) {
       e.preventDefault();
       formStatus.textContent = "El nombre es demasiado corto.";
+      formStatus.style.color = "var(--color1)";
       return;
     }
 
     if (!/^[\d\s]+$/.test(telefono)) {
       e.preventDefault();
       formStatus.textContent = "El teléfono solo debe contener números.";
+      formStatus.style.color = "var(--color1)";
       return;
     }
 
     formStatus.textContent = "Enviando mensaje...";
+    formStatus.style.color = "var(--white)";
   });
 }
 
 
-/* --- MAPA INTERACTIVO (ZOOM & DRAG) --- */
+/* --- MAPA INTERACTIVO (ZOOM & DRAG con soporte Móvil) --- */
 const imgMap = document.getElementById("coverageMap");
 const mapContainer = document.getElementById("mapZoom");
 const btnIn = document.getElementById("zoomIn");
@@ -53,46 +57,47 @@ if (imgMap && mapContainer) {
 
   btnOut?.addEventListener("click", () => {
     state.scale = Math.max(state.scale - 0.5, 1);
-
-    if (state.scale === 1) {
-      state.x = 0;
-      state.y = 0;
-    }
-
+    if (state.scale === 1) { state.x = 0; state.y = 0; }
     renderMap();
   });
 
-  mapContainer.addEventListener("mousedown", (e) => {
+  // Funciones genéricas para inicio y movimiento del arrastre
+  const startDrag = (clientX, clientY) => {
     if (state.scale <= 1) return;
-
     state.active = true;
-    state.startX = e.clientX - state.x;
-    state.startY = e.clientY - state.y;
-  });
+    state.startX = clientX - state.x;
+    state.startY = clientY - state.y;
+  };
 
-  window.addEventListener("mousemove", (e) => {
+  const moveDrag = (clientX, clientY) => {
     if (!state.active) return;
-
-    state.x = e.clientX - state.startX;
-    state.y = e.clientY - state.startY;
+    state.x = clientX - state.startX;
+    state.y = clientY - state.startY;
     renderMap();
-  });
+  };
 
-  window.addEventListener("mouseup", () => {
-    state.active = false;
-  });
+  // Eventos de Mouse (Escritorio)
+  mapContainer.addEventListener("mousedown", (e) => startDrag(e.clientX, e.clientY));
+  window.addEventListener("mousemove", (e) => moveDrag(e.clientX, e.clientY));
+  window.addEventListener("mouseup", () => state.active = false);
 
+  // CORREGIDO: Eventos Touch (Móviles)
+  mapContainer.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 1) startDrag(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+
+  window.addEventListener("touchmove", (e) => {
+    if (e.touches.length === 1) moveDrag(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+
+  window.addEventListener("touchend", () => state.active = false);
+
+  // Zoom con la rueda del ratón
   mapContainer.addEventListener("wheel", (e) => {
     e.preventDefault();
-
     const delta = e.deltaY > 0 ? -0.2 : 0.2;
     state.scale = Math.min(Math.max(state.scale + delta, 1), 5);
-
-    if (state.scale === 1) {
-      state.x = 0;
-      state.y = 0;
-    }
-
+    if (state.scale === 1) { state.x = 0; state.y = 0; }
     renderMap();
   }, { passive: false });
 }
@@ -114,7 +119,6 @@ function renderVehicles() {
 
   vehicleItems.forEach((item, index) => {
     item.classList.remove("is-active", "is-prev", "is-next");
-
     if (index === activeVehicle) {
       item.classList.add("is-active");
     } else if (index === prevIndex) {
@@ -125,7 +129,6 @@ function renderVehicles() {
   });
 
   const current = vehicleItems[activeVehicle];
-
   if (current && vehicleTitle && vehicleDescription) {
     vehicleTitle.textContent = current.dataset.title;
     vehicleDescription.textContent = current.dataset.text;
@@ -186,16 +189,19 @@ brandBubbles.forEach((bubble) => {
     bubble.classList.add("is-selected");
   });
 });
-///////////////////////////////////////////////////////////////////////////////////
 
-
+/* 
+  NOTA LOGÍSTICA: Si vas a usar componentes dinámicos con HTML asíncrono, 
+  descomenta esto, pero recuerda que debes inicializar el menú del header 
+  DENTRO del callback del fetch para que encuentre los elementos.
+*/
+/*
 function loadHTML(id, file) {
   fetch(file)
     .then(response => response.text())
     .then(data => {
-      document.getElementById(id).innerHTML = data;
+      const el = document.getElementById(id);
+      if(el) el.innerHTML = data;
     });
 }
-
-loadHTML("header", "header.html");
-loadHTML("footer", "footer.html");
+*/
