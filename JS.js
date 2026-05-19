@@ -1,3 +1,30 @@
+/* --- FORMULARIO DE CONTACTO --- */
+const contactForm = document.querySelector(".contact-form");
+const formStatus = document.getElementById("formMessage");
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener("submit", (e) => {
+    const nombre = document.getElementById("nombre").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+
+    if (nombre.length < 5) {
+      e.preventDefault();
+      formStatus.textContent = "El nombre es demasiado corto.";
+      formStatus.style.color = "var(--color1)";
+      return;
+    }
+
+    if (!/^[\d\s]+$/.test(telefono)) {
+      e.preventDefault();
+      formStatus.textContent = "El teléfono solo debe contener números.";
+      formStatus.style.color = "var(--color1)";
+      return;
+    }
+
+    formStatus.textContent = "Enviando mensaje...";
+    formStatus.style.color = "var(--white)";
+  });
+}
 
 
 /* --- MAPA INTERACTIVO (ZOOM & DRAG con soporte Móvil) --- */
@@ -162,47 +189,3 @@ brandBubbles.forEach((bubble) => {
   });
 });
 
-const contactForm = document.querySelector(".contact-form");
-const formStatus = document.getElementById("formMessage");
-
-if (contactForm && formStatus) {
-  contactForm.addEventListener("submit", async (e) => {
-    e.preventDefault(); // Evita que la página se recargue o se vaya a Formspree
-
-    // Validaciones básicas
-    const nombre = document.getElementById("nombre").value.trim();
-    const telefono = document.getElementById("telefono").value.trim();
-
-    if (nombre.length < 5) {
-      formStatus.textContent = "El nombre es demasiado corto.";
-      formStatus.style.color = "var(--color1)";
-      return;
-    }
-
-    // Preparar los datos para enviar
-    const data = new FormData(contactForm);
-    
-    formStatus.textContent = "Enviando mensaje...";
-    formStatus.style.color = "var(--white)";
-
-    // Enviar a Formspree mediante AJAX
-    const response = await fetch(contactForm.action, {
-      method: contactForm.method,
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-
-    if (response.ok) {
-      // ÉXITO
-      formStatus.textContent = "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.";
-      formStatus.style.color = "#4CAF50"; // Un verde para el éxito
-      contactForm.reset(); // Limpia el formulario
-    } else {
-      // ERROR
-      formStatus.textContent = "Hubo un error al enviar. Por favor, intenta de nuevo.";
-      formStatus.style.color = "var(--color3)";
-    }
-  });
-}
