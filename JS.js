@@ -1,31 +1,3 @@
-/* --- FORMULARIO DE CONTACTO --- */
-// CORREGIDO: Selecciona por clase ya que el HTML no tiene ID 'contactForm'
-const contactForm = document.querySelector(".contact-form");
-const formStatus = document.getElementById("formMessage");
-
-if (contactForm && formStatus) {
-  contactForm.addEventListener("submit", (e) => {
-    const nombre = document.getElementById("nombre").value.trim();
-    const telefono = document.getElementById("telefono").value.trim();
-
-    if (nombre.length < 5) {
-      e.preventDefault();
-      formStatus.textContent = "El nombre es demasiado corto.";
-      formStatus.style.color = "var(--color1)";
-      return;
-    }
-
-    if (!/^[\d\s]+$/.test(telefono)) {
-      e.preventDefault();
-      formStatus.textContent = "El teléfono solo debe contener números.";
-      formStatus.style.color = "var(--color1)";
-      return;
-    }
-
-    formStatus.textContent = "Enviando mensaje...";
-    formStatus.style.color = "var(--white)";
-  });
-}
 
 
 /* --- MAPA INTERACTIVO (ZOOM & DRAG con soporte Móvil) --- */
