@@ -1486,3 +1486,13 @@ body {
     width: 100%;
   }
 }
+
+#servicios h2 {
+  margin-bottom: 2.8rem;
+  color: var(--color4);
+}
+
+#servicios h2::after {
+  content: " servicios";
+  color: var(--white);
+}
