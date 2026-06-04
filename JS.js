@@ -189,3 +189,46 @@ brandBubbles.forEach((bubble) => {
   });
 });
 
+/* --- ANIMACIÓN DE ESTADÍSTICAS --- */
+const statNumbers = document.querySelectorAll(".stat-number");
+
+const animateStat = (stat) => {
+  const target = Number(stat.dataset.target);
+  const suffix = stat.dataset.suffix || "";
+  const duration = 2600;
+  const startTime = performance.now();
+
+  const update = (currentTime) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = Math.round(target * eased);
+
+    stat.textContent = `${value}${suffix}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      stat.textContent = `${target}${suffix}`;
+    }
+  };
+
+  requestAnimationFrame(update);
+};
+
+if (statNumbers.length) {
+  const statsObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      const stat = entry.target;
+      if (stat.dataset.animated === "true") return;
+
+      stat.dataset.animated = "true";
+      animateStat(stat);
+      observer.unobserve(stat);
+    });
+  }, { threshold: 0.6 });
+
+  statNumbers.forEach((stat) => statsObserver.observe(stat));
+}
