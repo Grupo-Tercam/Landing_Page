@@ -232,3 +232,18 @@ if (statNumbers.length) {
 
   statNumbers.forEach((stat) => statsObserver.observe(stat));
 }
+
+/* --- CARRUSEL AUTOMÁTICO DE MARCAS --- */
+const brandsCollage = document.querySelector(".brands-collage");
+
+if (brandsCollage && !brandsCollage.dataset.cloned) {
+  const brandItems = Array.from(brandsCollage.children);
+
+  brandItems.forEach((item) => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    brandsCollage.appendChild(clone);
+  });
+
+  brandsCollage.dataset.cloned = "true";
+}
