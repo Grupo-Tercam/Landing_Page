@@ -1548,7 +1548,15 @@ body {
   color: var(--color4);
 }
 
-#servicios h2::after {
-  content: " servicios";
+
+.title-accent {
+  display: inline;
+}
+
+.accent-orange {
+  color: var(--color1);
+}
+
+.accent-white {
   color: var(--white);
 }
