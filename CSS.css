@@ -1797,3 +1797,20 @@ body {
   justify-content: flex-end;
   gap: 0.75rem;
 }
+
+.info-highlight {
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
+  padding-right: 15rem;
+}
+
+.info-highlight-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 230px;
+  max-width: 45%;
+  height: auto;
+  object-fit: contain;
+}
