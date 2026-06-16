@@ -363,24 +363,29 @@ body {
   border: 1px solid var(--line);
 }
 
-.about-card h3 {
+.equipo-card h3 {
   margin: 0 0 1rem;
   color: var(--color4);
   font-size: 1.8rem;
 }
 
-.about-card ul {
+.equipo-card ul {
   margin: 0;
   padding-left: 1.2rem;
 }
 
-.about-card li {
+.equipo-card li {
   margin-bottom: 0.8rem;
   color: var(--color5);
   font-size: 1rem;
   font-weight: 600;
 }
 
+.equipo-section {
+   background:
+    radial-gradient(circle at 12% 20%, rgba(249, 115, 22, 0.08), transparent 30%),
+    linear-gradient(135deg, #F8FAFC 0%, #F97316 100%);
+}
 /* Cobertura */
 .coverage {
   background: var(--color1);
