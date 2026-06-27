@@ -2322,3 +2322,50 @@ from {
     padding: 1.3rem 1.2rem;
   }
 }
+@media (max-width: 768px) {
+  .about-feature-card {
+    min-height: auto;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-feature-card::before {
+    inset: 0.8rem;
+  }
+
+  .about-feature-image {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 210px;
+    transform: none;
+    display: grid;
+    place-items: center;
+  }
+
+  .about-feature-image img {
+    width: min(92%, 320px);
+    max-height: 210px;
+    object-fit: contain;
+  }
+
+  .about-feature-copy {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding: 0.4rem 0.4rem 0.2rem;
+    text-align: left;
+  }
+
+  .about-feature-copy h3 {
+    font-size: 1.65rem;
+  }
+
+  .about-feature-copy p {
+    font-size: 0.98rem;
+  }
+}
