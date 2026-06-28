@@ -2476,3 +2476,51 @@ from {
     padding: 0.45rem;
   }
 }
+
+/* Fix responsive: Quiénes somos sin scroll horizontal */
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .about-section,
+  .about-layout,
+  .about-layout-featured,
+  .about-copy,
+  .about-feature-card {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .about-stats div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about-copy h2 {
+    font-size: 2.25rem;
+    line-height: 1.05;
+  }
+
+  .about-copy p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .about-feature-image {
+    width: 100%;
+  }
+
+  .about-feature-image img {
+    width: min(90%, 280px);
+    max-width: 100%;
+  }
+}
