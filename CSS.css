@@ -2443,3 +2443,36 @@ from {
     font-size: 1.18rem;
   }
 }
+
+/* Ajuste correcto de imágenes en galería de vehículos */
+.vehicle-item img {
+  object-fit: contain;
+  object-position: center;
+  background:
+    radial-gradient(circle at center, #ffffff 0%, #f8fafc 70%);
+  padding: 0.7rem;
+}
+
+.vehicle-item.is-active img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.85rem;
+}
+
+.vehicle-item.is-prev img,
+.vehicle-item.is-next img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.65rem;
+}
+
+@media (max-width: 768px) {
+  .vehicle-item img,
+  .vehicle-item.is-active img,
+  .vehicle-item.is-prev img,
+  .vehicle-item.is-next img {
+    object-fit: contain;
+    object-position: center;
+    padding: 0.45rem;
+  }
+}
