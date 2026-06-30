@@ -3283,3 +3283,26 @@ body {
     border-radius: 12px;
   }
 }
+
+@media (max-width: 768px) {
+  .about-section .container {
+    width: 100%;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+
+  .about-copy {
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
+  }
+
+  .about-stats {
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
+  }
+
+  .about-stats div {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
