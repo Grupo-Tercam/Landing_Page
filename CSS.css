@@ -2689,7 +2689,7 @@ body {
     width: 100%;
   }
 
-  .contact-video video, .hero-visual img {
+  .contact-video video, .hero-visual img, .info-main-image {
     width: 100%;
     border-radius: 18px;
   }
@@ -2870,6 +2870,21 @@ body {
   }
 
   .hero-main-image {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 18px;
+    border-width: 4px;
+  }
+
+  .info-image-wrap {
+    order: -1;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .info-main-image {
     width: 100%;
     height: auto;
     max-height: 420px;
