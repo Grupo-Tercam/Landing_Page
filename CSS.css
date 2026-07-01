@@ -2870,7 +2870,7 @@ body {
   }
 
   .hero-main-image {
-    width: 100%;
+    width: 90%;
     height: auto;
     max-height: 420px;
     object-fit: cover;
@@ -2881,7 +2881,7 @@ body {
   .info-image-wrap {
     order: -1;
     min-height: auto;
-    width: 100%;
+    width: 90%;
   }
 
   .info-main-image {
