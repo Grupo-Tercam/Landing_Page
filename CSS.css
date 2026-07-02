@@ -2519,8 +2519,11 @@ body {
   }
 
   .site-header {
-    position: static;
-    padding: 0.7rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: var(--white);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
   }
 
   .header-layout {
@@ -3341,5 +3344,22 @@ body {
   .about-stats div {
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: var(--white);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    right: 0;
+    z-index: 1000;
   }
 }
