@@ -1362,7 +1362,7 @@ body {
 
 .contact-stat strong {
   display: block;
-  color: var(--white);
+  color: var(--color1);
   font-size: 1.65rem;
   line-height: 1;
   font-weight: 900;
@@ -3386,4 +3386,8 @@ body {
     right: 1rem;
     z-index: 10000;
   }
+}
+
+.objective-card p:first-of-type {
+  color: var(--color1);
 }
