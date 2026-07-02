@@ -2518,13 +2518,14 @@ body {
     gap: 0.6rem;
   }
 
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background: var(--white);
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-  }
+ .site-header {
+  background: var(--white);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
 
   .header-layout {
     width: min(92%, 560px);
@@ -3361,5 +3362,28 @@ body {
     top: calc(100% + 0.6rem);
     right: 0;
     z-index: 1000;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: var(--white);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  body {
+    padding-top: 96px;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    right: 1rem;
+    z-index: 10000;
   }
 }
