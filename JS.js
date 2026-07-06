@@ -14,6 +14,7 @@ if (contactForm && formStatus) {
       return;
     }
 
+    
     if (!/^[\d\s]+$/.test(telefono)) {
       e.preventDefault();
       formStatus.textContent = "El teléfono solo debe contener números.";
