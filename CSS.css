@@ -750,7 +750,7 @@ body {
   top: 0;
   width: 7px;
   height: 100%;
-  background: linear-gradient(180deg, var(--color1), var(--color2));
+  
 }
 
 .equipo-card-wide {
@@ -775,6 +775,15 @@ body {
   font-size: 0.85rem;
   font-weight: 900;
   text-transform: uppercase;
+}
+
+.equipo-card .equipo-tag {
+  display: inline-flex;
+  margin: 0 0 1.4rem 0 !important;
+}
+
+.equipo-card h3 {
+  margin-top: 0 !important;
 }
 
 .equipo-card h3 {
