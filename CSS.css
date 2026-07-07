@@ -3474,3 +3474,11 @@ li,
 .why-card h3 {
   margin-top: 0;
 }
+@media (max-width: 768px) {
+  .why-card img {
+    width: calc(100% + 32px);
+    max-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
