@@ -3458,3 +3458,10 @@ li,
     border-radius: 0;
   }
 }
+.why-card-content {
+  padding-top: 1.5rem;
+}
+
+.why-card h3 {
+  margin-top: 0;
+}
