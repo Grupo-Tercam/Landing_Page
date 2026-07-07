@@ -3421,6 +3421,6 @@ li,
   .info-page-copy p,
   .info-value-card p,
   .objective-card p {
-    text-align: justify;
+    text-align: left;
   }
 }
