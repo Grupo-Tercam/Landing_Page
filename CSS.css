@@ -3396,3 +3396,40 @@ body {
 .why-section::before {
   display: none;
 }
+
+p,
+li,
+.card p,
+.why-card p,
+.about-copy p,
+.equipo-card p,
+.coverage-copy p,
+.vehicle-text p,
+.contact-hero-copy p,
+.contact-heading p,
+.contact-benefits p,
+.info-page-copy p,
+.info-value-card p,
+.objective-card p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+@media (max-width: 768px) {
+  p,
+  li,
+  .card p,
+  .why-card p,
+  .about-copy p,
+  .equipo-card p,
+  .coverage-copy p,
+  .vehicle-text p,
+  .contact-hero-copy p,
+  .contact-heading p,
+  .contact-benefits p,
+  .info-page-copy p,
+  .info-value-card p,
+  .objective-card p {
+    text-align: left;
+  }
+}
