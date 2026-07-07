@@ -363,7 +363,7 @@ body {
 /* Servicios */
 
 #servicios {
-  background: var(--color1);
+  background: var(--white);
 }
 
 #servicios h2, .coverage-copy h2, .contact-section h2 {
@@ -464,26 +464,17 @@ body {
   max-width: 980px;
   margin: 1.6rem 0 2.2rem;
   padding: 1.15rem 1.35rem 1.15rem 1.6rem;
-  border-left: 5px solid var(--white);
+  border-left: 5px solid var(--color1);
   border-radius: 0 14px 14px 0;
-  background: rgba(255, 255, 255, 0.14);
+  background:var(--color1);
   color: rgba(255, 255, 255, 0.92);
   font-size: 1.12rem;
   font-weight: 500;
   line-height: 1.75;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.16);
 }
 
-.services-intro::before {
-  content: "";
-  position: absolute;
-  left: -5px;
-  top: 1.15rem;
-  width: 5px;
-  height: 42%;
-  border-radius: 999px;
-  background: var(--color4);
-}
+
 
 
 /* Nosotros */
