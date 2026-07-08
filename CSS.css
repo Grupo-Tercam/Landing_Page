@@ -3511,3 +3511,34 @@ li,
     padding: 1.35rem 1.35rem 1.6rem !important;
   }
 }
+.contact-note {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: none;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 76px !important;
+  }
+
+  main {
+    margin-top: 0 !important;
+  }
+
+  #inicio.hero {
+    padding-top: 0.8rem !important;
+  }
+
+  #inicio .hero-layout {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  #inicio .hero-image-wrap {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
