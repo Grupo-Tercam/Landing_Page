@@ -138,7 +138,7 @@ body {
   padding: 4rem 0;
   overflow: hidden;
   background: radial-gradient(circle at top right, rgba(249, 115, 22, 0.08), transparent 28%),
-    linear-gradient(180deg, #F97316 0%, #F8FAFC 100%);
+    linear-gradient(180deg, #e9e7e600 0%, #F8FAFC 100%);
 }
 
 .brands-heading {
@@ -865,7 +865,7 @@ body {
 /* Cobertura */
 
 .coverage {
-  background: var(--color1);
+  background: var(--white);
   position: relative;
   overflow: hidden;
 }
@@ -894,7 +894,7 @@ body {
   position: relative;
   padding: 0.75rem;
   border-radius: 18px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 237, 213, 0.72));
+  background: linear-gradient(135deg, rgb(239, 138, 6), rgb(234, 149, 3));
   box-shadow: 0 28px 54px rgba(15, 23, 42, 0.2);
 }
 
@@ -3480,5 +3480,34 @@ li,
     max-width: none;
     margin-left: -16px;
     margin-right: -16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-feature-card {
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.18) !important;
+    background: #101b2d !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  .about-feature-inner {
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  .about-feature-card img {
+    width: 100% !important;
+    display: block !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .about-feature-content {
+    padding: 1.35rem 1.35rem 1.6rem !important;
   }
 }
