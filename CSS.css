@@ -3613,3 +3613,11 @@ li,
     overflow-wrap: anywhere !important;
   }
 }
+
+.info-value-card,
+.info-value-card::before,
+.info-value-card::after {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none;
+}
