@@ -3576,3 +3576,49 @@ li,
     line-height: 1.2;
   }
 }
+
+/* Informacion: evitar que el texto se tape con la imagen */
+.info-page-layout {
+  grid-template-columns: minmax(0, 0.95fr) minmax(460px, 1.05fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.info-page-copy {
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.info-page-copy h1 {
+  max-width: 640px;
+  font-size: clamp(3rem, 4vw, 4.8rem);
+}
+
+.info-page-copy p {
+  max-width: 620px;
+}
+
+.info-image-wrap {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.info-main-image {
+  width: 100%;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .info-page-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .info-page-copy h1,
+  .info-page-copy p {
+    max-width: 100%;
+  }
+}
