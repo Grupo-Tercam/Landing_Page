@@ -3622,3 +3622,18 @@ li,
     max-width: 100%;
   }
 }
+/* Informacion: objetivos sin espacios raros por justificado */
+.objective-card p,
+.objective-card strong,
+.objective-card span,
+.objective-card li {
+  text-align: left;
+  text-align-last: left;
+  word-spacing: normal;
+  letter-spacing: 0;
+  hyphens: auto;
+}
+
+.objective-card p {
+  line-height: 1.45;
+}
