@@ -3532,3 +3532,47 @@ li,
     border: none;
   }
 }
+/* Equipo: cards mas compactas solo en escritorio */
+@media (min-width: 901px) {
+  .equipo-card-wide {
+    max-width: 1060px;
+  }
+
+  .equipo-card {
+    padding: 2.1rem 2.4rem 2.3rem;
+  }
+
+  .equipo-copy {
+    margin-bottom: 1.35rem;
+  }
+
+  .equipo-metrics {
+    gap: 0.85rem;
+  }
+
+  .equipo-indicator {
+    min-height: 96px;
+    padding: 0.9rem 1rem 0.9rem 4.35rem;
+    border-radius: 14px;
+    align-content: center;
+  }
+
+  .equipo-indicator i {
+    left: 1rem;
+    top: 50%;
+    width: 42px;
+    height: 42px;
+    transform: translateY(-50%);
+    font-size: 1.05rem;
+  }
+
+  .equipo-indicator strong {
+    font-size: 1.45rem;
+  }
+
+  .equipo-indicator span {
+    margin-top: 0.25rem;
+    font-size: 0.86rem;
+    line-height: 1.2;
+  }
+}
