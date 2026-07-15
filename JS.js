@@ -2,6 +2,7 @@
 const contactForm = document.querySelector(".contact-form");
 const formStatus = document.getElementById("formMessage");
 
+
 if (contactForm && formStatus) {
   contactForm.addEventListener("submit", (e) => {
     const nombre = document.getElementById("nombre").value.trim();
