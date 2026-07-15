@@ -3511,3 +3511,24 @@ li,
     word-break: break-word;
   }
 }
+/* Cobertura: imagen inferior sin marco */
+.coverage-copy-image {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.coverage-copy-image img {
+  border-radius: 14px;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .coverage-copy-image {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+}
