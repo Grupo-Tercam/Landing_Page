@@ -3637,3 +3637,42 @@ li,
 .objective-card p {
   line-height: 1.45;
 }
+
+/* Hero: mejorar saltos de linea del titulo */
+.hero-layout {
+  grid-template-columns: minmax(560px, 0.95fr) minmax(520px, 1.05fr);
+  gap: 3.5rem;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.hero-content h2 {
+  max-width: 760px;
+  font-size: clamp(3.4rem, 4.6vw, 5.2rem);
+  line-height: 1.06;
+}
+
+/* En pantallas medianas vuelve a acomodarse sin romper */
+@media (max-width: 1180px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    max-width: 820px;
+  }
+
+  .hero-content h2 {
+    max-width: 820px;
+  }
+}
+
+/* Movil */
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: clamp(2.6rem, 11vw, 4rem);
+    line-height: 1.08;
+  }
+}
