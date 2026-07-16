@@ -3676,3 +3676,24 @@ li,
     line-height: 1.08;
   }
 }
+
+/* Servicios: alinear bloque naranja con las cards */
+.services-intro {
+  width: 100%;
+  max-width: none;
+}
+
+#servicios .container {
+  max-width: 1400px;
+}
+
+#servicios .section-lead,
+#servicios .services-intro,
+.services-intro {
+  width: 100%;
+}
+
+#servicios .grid {
+  width: 100%;
+}
+
