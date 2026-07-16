@@ -3780,3 +3780,52 @@ li,
   display: none;
   content: none;
 }
+
+/* Centrar burbuja "UNIDADES DISPONIBLES" */
+#contacto .contact-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contacto .contact-kicker {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 1.4rem;
+  justify-content: center;
+  text-align: center;
+}
+
+#contacto .contact-kicker::after {
+  display: none;
+  content: none;
+}
+
+@media (min-width: 769px) {
+  #contacto .contact-kicker {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* PC: mover "UNIDADES DISPONIBLES" al centro de la sección */
+@media (min-width: 769px) {
+  #contacto .contact-landing {
+    position: relative;
+  }
+
+  #contacto .contact-kicker {
+    position: absolute;
+    top: 3.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 3;
+  }
+
+  #contacto .contact-hero-copy {
+    padding-top: 5.2rem;
+  }
+}
